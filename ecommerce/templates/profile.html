@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title %}Profile Page{% endblock title %}
+{% block body %}
+<section id="portfolio" class="portfolio">
+    <div class="container">
+<h1>My Profile</h1>
+
+<table class="table table-info table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Order ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Amount Paid</th>
+        <th scope="col">Address</th>
+        <th scope="col">Phone Number</th>
+      </tr>
+    </thead>
+    <tbody>
+
+        {% for i  in item %}
+
+        <tr>
+            <th scope="row">{{i.order_id}} </th>
+            <td>{{i.name}}</td>
+            <td>{{i.amount}} </td> 
+            <td> {{i.address1}}</td>
+            <td> {{i.phone}}</td>
+            {% endfor %}
+    </tbody>
+    </table>
+    </div>
+    </section>
+{% endblock body %}
